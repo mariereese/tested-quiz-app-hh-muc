@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 
 export default function QuizCard({ question, answer }) {
+  const [showAnswer, setShowAnswer] = useState(false)
+
   return (
     <Wrapper>
       <p>{question}</p>
-      <p>{answer}</p>
+      <button onClick={() => setShowAnswer(!showAnswer)}>Toggle answer</button>
+      {showAnswer && <p>{answer}</p>}
     </Wrapper>
   )
 }

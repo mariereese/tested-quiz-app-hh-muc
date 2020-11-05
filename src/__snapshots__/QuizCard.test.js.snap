@@ -2,7 +2,7 @@
 
 exports[`QuizCard renders correctly 1`] = `
 .c0 {
-  margin: 5px 5px 40px;
+  margin: 10px 10px 40px;
   padding: 20px;
   box-shadow: 0 10px 16px #0004;
 }
@@ -13,8 +13,8 @@ exports[`QuizCard renders correctly 1`] = `
   <p>
     Foo?
   </p>
-  <p>
-    Bar!
-  </p>
+  <button>
+    Toggle answer
+  </button>
 </section>
 `;
