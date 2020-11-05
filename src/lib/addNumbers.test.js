@@ -1,12 +1,9 @@
-// jest
-
 import addNumbers from './addNumbers'
 
 describe('addNumbers', () => {
-  // single test:
   it('adds two numbers', () => {
     const result = addNumbers(2, 3)
-    expect(result).toEqual(5)
+    expect(result).toBe(5)
   })
 
   it('returns the same number if only one param', () => {
