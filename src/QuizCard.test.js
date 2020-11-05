@@ -1,5 +1,6 @@
 import QuizCard from './QuizCard'
-import { render, fireEvent } from '@testing-library/react'
+import { render } from '@testing-library/react'
+import user from '@testing-library/user-event'
 
 describe('QuizCard', () => {
   it('renders correctly', () => {
@@ -15,7 +16,7 @@ describe('QuizCard', () => {
     expect(queryByText(/bar/i)).not.toBeInTheDocument()
 
     const button = getByRole('button', { name: 'Toggle answer' })
-    fireEvent.click(button)
+    user.click(button)
 
     expect(queryByText(/bar/i)).toBeInTheDocument()
   })
