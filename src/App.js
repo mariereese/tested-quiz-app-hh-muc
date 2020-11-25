@@ -1,17 +1,16 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Form from './Form'
 
 const { default: QuizCard } = require('./QuizCard')
 
-function App() {
-  const [cards, setCards] = useState([
-    {
-      id: 1,
-      question: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit?',
-      answer:
-        'Voluptate id quis repudiandae, numquam molestias quae, aperiam quam sunt fuga at et sit vero unde quo dolores libero repellat, ut totam.',
-    },
-  ])
+function App({ fetchMethod = fetch }) {
+  const [cards, setCards] = useState([])
+
+  useEffect(() => {
+    fetchMethod('http://localhost:4000/questions')
+      .then((res) => res.json())
+      .then((questions) => setCards(questions))
+  }, [])
 
   return (
     <div className="App">
